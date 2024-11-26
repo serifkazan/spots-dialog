@@ -36,37 +36,12 @@ dependencies {
 }
 publishing {
     publications {
-        maven(MavenPublication) {
+        maven(MavenPublication){
             groupId = 'com.d-max'
             artifactId = 'spots-dialog'
-            version = "2.4"
-            artifact "$buildDir/outputs/aar/spots-dialog-release.aar"
+            version = '2.6'
 
-            pom {
-                withXml {
-                    def dependenciesNode = asNode().appendNode('dependencies')
-
-                    project.configurations.implementation.allDependencies.each {
-
-                        if (it.group == null || it.name == null || it.version == null || it.name == "unspecified") return
-
-                        def dependencyNode = dependenciesNode.appendNode('dependency')
-                        dependencyNode.appendNode('groupId', it.group)
-                        dependencyNode.appendNode('artifactId', it.name)
-                        dependencyNode.appendNode('version', it.version)
-                    }
-
-                    project.configurations.releaseImplementation.allDependencies.each {
-
-                        if (it.group == null || it.name == null || it.version == null || it.name == "unspecified") return
-
-                        def dependencyNode = dependenciesNode.appendNode('dependency')
-                        dependencyNode.appendNode('groupId', it.group)
-                        dependencyNode.appendNode('artifactId', it.name)
-                        dependencyNode.appendNode('version', it.version)
-                    }
-                }
-            }
+            from components.findByName('release')
         }
     }
 }
