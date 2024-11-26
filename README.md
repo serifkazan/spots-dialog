@@ -1,6 +1,6 @@
 # Spots  progress dialog
 
-[![Maven](https://img.shields.io/badge/bintray-1.1-brightgreen.svg)](https://bintray.com/d-max/spots-dialog/d-max.spots-dialog/1.1)
+[![](https://jitpack.io/v/serifkazan/spots-dialog.svg)](https://jitpack.io/#serifkazan/spots-dialog)
 &nbsp;&nbsp;
 [![Blog Post](https://img.shields.io/badge/medium-post-yellow.svg)](https://medium.com/@dybarsky/spots-progress-dialog-490bd2c737b1)
 &nbsp;&nbsp;
@@ -19,10 +19,10 @@ Android AlertDialog with moving spots progress indicator packed as android libra
 The library available in maven jcenter repository. You can get it using:
 ```groovy
 repositories {
-    jcenter()
+   maven { url 'https://jitpack.io' }
 }
 dependencies {
-    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+    implementation 'com.github.serifkazan:spots-dialog:2.6'
 }
 ```
 Javadoc and sources package [classifiers][3] available too.
@@ -117,6 +117,8 @@ If you're using proguard, add this code to your rules file:
 
 
 ### Release notes
+**[v2.6, Nov 26th 2024][12]**
+* Updated to latest Android libraries
 
 **[v1.1, June 5th 2018][11]**
 * Builder provided
